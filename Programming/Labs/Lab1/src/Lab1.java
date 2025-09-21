@@ -57,6 +57,7 @@ public class Lab1{
             System.out.print(element + "\t");
         }
         System.out.println();
+        System.out.println();
 
     }
     public static void PrintArray(double [] Array)
@@ -66,6 +67,7 @@ public class Lab1{
             System.out.printf("%.3f\t" , element);
         }
         System.out.println();
+        System.out.println();
     }
     public static void PrintArray(double [][] Array)
     {
@@ -73,7 +75,7 @@ public class Lab1{
         {
             for(double row : rows)
             {
-                System.out.printf("%8.3f" , row);
+                System.out.printf("%9.3f" , row);
             }
             System.out.println();
         }
@@ -85,7 +87,7 @@ public class Lab1{
         double [] Array2 = Array2(14,-6.0,2.0);
         double [][] Array3 = Array3(11,14,Array1 , Array2);
 
-
+        
         PrintArray(Array1);
         PrintArray(Array2);
         PrintArray(Array3);

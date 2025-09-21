@@ -151,14 +151,35 @@ chmod 644 rhydon4
 
 
 #3.1
+chmod u+r braviary4/fraxure
 cat braviary4/fraxure finneon8/walrein/ekans finneon8/pupitar/purrloin > rhydon4_66
+chmod u-r braviary4/fraxure 
 
 #3.2
+chmod u+w finneon8/walrein
 cat charizard7 > finneon8/walrein/ekanscharizard
+chmod u-w finneon8/walrein 
 
 #3.3
+chmod u+r finneon8/oddish
+chmod u+r finneon8/ekans
+chmod u+r finneon8/walrein/electrode
+chmod u+r finneon8/walrein/hypno
+chmod u+r finneon8/walrein/tentacruel
+chmod u+r finneon8/pupitar
+chmod u+r finneon8/pupitar/budew
+chmod u+r finneon8/pupitar/mienfoo
+
 cp -r finneon8 hoppip4/koffing/sandile
 
+chmod u-r finneon8/oddish
+chmod u-r finneon8/ekans
+chmod u-r finneon8/pupitar
+chmod u-r finneon8/walrein/electrod
+chmod u-r finneon8/walrein/hypno
+chmod u-r finneon8/walrein/tentacru
+chmod u-r finneon8/pupitar/budew
+chmod u-r finneon8/pupitar/mienfoo
 #3.4
 ln -s ../../rhydon4 braviary4/swanna/slakothrhydon
 
@@ -174,12 +195,20 @@ cp rhydon4 braviary4/swanna/squirtle/
 #cp: cannot copy a directory, 'hoppip4', into itself, 'hoppip4/koffing/sandilel'
 #Проблема заключается в том, что мы пытаемся рекурсивно копировать директорию в саму себя, что приводит к бесконечному циклу
 
+chmod u+r hoppip4
+chmod u+r hoppip4/ninjask
+chmod u+r hoppip4/koffing/chingling
+chmod u+r hoppip4/omastar/fraxure
+
 mkdir -p temp/hoppip4
 cp -r hoppip4/* temp/hoppip4
 mv temp/hoppip4 hoppip4/koffing/sandile
 rmdir temp
 
-
+chmod u-r hoppip4
+chmod u-r hoppip4/ninjask
+chmod u-r hoppip4/koffing/chingling
+chmod u-r hoppip4/omastar/fraxure
 
 
 
@@ -192,7 +221,9 @@ ln -s hoppip4 Copy_11
 ln -s ../../charizard7 finneon8/pupitar/glaliecharizard
 
 #3.9
+chmod u+w finneon8/walrein
 ln cottonee3 finneon8/walrein/skuntankcottonee
+chmod u-w finneon8/walrein
 
 #3.10
 cat charizard7 > finneon8/ekans/axewcharizard
@@ -201,10 +232,16 @@ cat charizard7 > finneon8/ekans/axewcharizard
 ln -s braviary4 Copy_31
 
 #3.12
+chmod u+r hoppip4/ninjask
+chmod u+r braviary4/swanna/fearow
 cat finneon8/walrein/skuntank hoppip4/ninjask braviary4/swanna/fearow > rhydon4_87
+chmod u-r hoppip4/ninjask
+chmod u-r braviary4/swanna/fearow
 
 #3.13
+chmod u+w finneon8/ekans/houndoom
 cp charizard7 finneon8/ekans/houndoom/
+chmod u-w finneon8/ekans/houndoom
 
 #3.14
 ln cottonee3 braviary4/machamp/quilavacottonee
@@ -270,5 +307,6 @@ rm Copy_*
 rm lab0/finneon8/walrein/skuntankcotton*
 rmdir hoppip4
 rmdir lab0/hoppip4/koffing/sandile
+
 
 
