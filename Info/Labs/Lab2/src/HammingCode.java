@@ -3,7 +3,7 @@
 import java.util.Scanner;
 
 
-public class Lab2 {
+public class HammingCode {
 	public static boolean IsValidInput(String input)
 	{
 		if(input.length() != 7)
@@ -114,7 +114,8 @@ public class Lab2 {
 			String ErrorSymbol = GetErrorSymbol(Bits);
 			if(ErrorSymbol.charAt(0) == 'r')
 			{
-				System.out.println("There is No Error in the Message :-)");
+				System.out.println("Error detected at parity bit " + ErrorSymbol + 
+                           "\nSo there is No Error in The Message :-)");
 			}
 			else
 			{
