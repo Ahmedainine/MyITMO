@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class lab1{
+public class Additional_Assignment{
 
      private static final Scanner in = new Scanner(System.in);
 
