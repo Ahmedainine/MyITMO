@@ -1,84 +1,86 @@
-
 import java.util.Scanner;
 
-public class Additional_Assignment {
+public class lab1{
+
+     private static final Scanner in = new Scanner(System.in);
 
     public static int ReadAndValidateInput()
     {
-        int number ;
-        while(true)
-		{
-            Scanner reader = new Scanner(System.in);
-			System.out.print("Please enter a non-negative decimal number: ");
-            String input = reader.nextLine();
-			try {
-                number = Integer.parseInt(input); 
-                if (number < 0) {
-                    System.err.println("Number must be non-negative. Try again!");
+        int number=0;
+        while (true) { 
+            System.out.print("Enter a non-negative number  :   ");
+            String input = in.nextLine();
+            try {
+                number = Integer.parseInt(input);
+                if(number < 0)
+                {
+                    System.err.println("Invalid Input :-(\nNumber Must be non-negative , Try AGain !");
                 }
-                else {
-                    break; 
+                else{
+                    break;
                 }
-            } 
-            catch (NumberFormatException e) {
-                System.err.println("Invalid input:-( '" + input + "' is not a number. Try again!");
+
+            } catch (NumberFormatException e) {
+                System.err.println("Invalid input :-(\n'" + input + "' Is not a Number , Try AGain !");
             }
-		}
-        return  number;
+        }
+        return number;
     }
-	public static int[] Fibonacci(int max)
-	{
-		int [] temp = new int[100];
-		temp[0] = 1;
-		temp[1] = 2;
-		int counter = 2;
-		while(temp[counter-1]<= max)
-		{
-			temp[counter] = temp[counter-2] + temp[counter-1];
-			counter++;
-		}
-		int [] Fibs = new int[counter];
-		for(int i=0 ; i<counter ; i++)
-		{
-			Fibs[i] = temp[i];
-		}
-		return Fibs;
-	}
-	public static String DecimalToFib(int Number)
-
-	{
-		int[] Fibs = Fibonacci(Number);
-		StringBuilder result = new StringBuilder();
-		int i = Fibs.length - 1;
-		while(i >=0)
-		{
-			if(Fibs[i] <= Number)
-			{
-				result.append("1");
-				Number -= Fibs[i];
-				i--;
-				if(i>=0)
-				{
-					result.append("0");
-				}
-			}
-			else
-			{
-				result.append("0");
-			}
-			i--;
-		}
-		while(result.length() > 1 && result.charAt(0) == '0')
-		{
-			result.deleteCharAt(0);
-		}
-		return result.toString();
-	}
-	public static void main(String[] args) {       
-		int number = ReadAndValidateInput();
-        String fibRep = DecimalToFib(number);
-        System.out.println("Fibonacci representation: " + fibRep);  
-       
-	}
-
+    public static int[] Fibonacci(int max)
+    {
+        int previous = 1 , current = 2;
+        int counter=2;
+        while(previous + current <= max)
+        {
+            int temp = previous + current;
+            previous = current;
+            current = temp;
+            counter++;
+        }
+        int [] Fibs = new int[counter];
+        Fibs[0] = 1;
+        Fibs[1] = 2;
+        previous = 1 ; 
+        current = 2;
+        for(int i=2 ; i<counter ; i++)
+        {
+            Fibs[i] = previous + current;
+            previous = current;
+            current = Fibs[i];
+        }
+        return Fibs;
+    }
+    public static String DecimalToFib(int number)
+    {
+        StringBuilder result = new StringBuilder();
+        int[] Fibs = Fibonacci(number);
+        int i = Fibs.length - 1;
+        while(i>=0)
+        {
+            if(Fibs[i] <= number)
+            {
+                result.append("1");
+                number -= Fibs[i];
+            }
+            else{
+                result.append("0");
+            }
+            i--;
+        }
+        while(result.length() > 1 && result.charAt(0)=='0')
+        {
+            result.deleteCharAt(0);
+        }
+        return result.toString();
+    }
+    public static void ShowResult()
+    {
+        int number = ReadAndValidateInput();
+        String FibRep = DecimalToFib(number);
+        System.out.println("Fibonacci Representation of " + number + " is  :  " + FibRep);
+    }
+    public static void main(String[] args)
+    {
+        ShowResult();
+    }
 }

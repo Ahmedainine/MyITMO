@@ -104,11 +104,9 @@ public class HammingCode {
 		Result[index] = (Result[index] == 0) ? 1 : 0;
 		return GetCorrectMessage(Result);
 	}
-	
-	public static void main(String[] args) {
-		
-	
-		int [] Bits = InputToBits(ReadInput());
+	public static void Hamming_Code()
+	{
+			int [] Bits = InputToBits(ReadInput());
 		if(HasError(Bits))
 		{
 			String ErrorSymbol = GetErrorSymbol(Bits);
@@ -123,11 +121,10 @@ public class HammingCode {
 			}
 		}
 		System.out.println("The Correct Message is  :   " + CorrectMessage(Bits));
-		
-		
-		
-		
-
+	}
+	
+	public static void main(String[] args) {
+		Hamming_Code();
 	}
 
 }
