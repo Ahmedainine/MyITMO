@@ -4,25 +4,25 @@ import java.util.Random;
 public class Lab1{
 
 
-    public static long[] Array1(int lower , int upper)
+    public static long[] Arrayn(int lower , int upper)
     {
         int length = (upper-lower)/2 + 1;
-        long [] Array1 = new long[length];
-        for(int i=0 ; i<Array1.length;i++)
+        long [] n = new long[length];
+        for(int i=0 ; i< n.length ; i++)
         {
-            Array1[i] = upper - 2 * i;
+            n[i] = upper - 2 * i;
         }
-        return Array1;
+        return n;
     }
-    public static double[] Array2(int length ,  double From , double To)
+    public static double[] Arrayx(int length ,  double From , double To)
     {
-        double[] Array2 = new double[length];
+        double[] x = new double[length];
         Random rnd = new Random();
-        for(int i=0 ; i<Array2.length;i++)
+        for(int i=0 ; i<x.length;i++)
         {
-            Array2[i] = rnd.nextDouble()*(To-From)+From;
+            x[i] = rnd.nextDouble()*(To-From)+From;
         }
-        return Array2;
+        return x;
     }
     public static double TheHardThings(long l , double x)
     {
@@ -38,21 +38,21 @@ public class Lab1{
             return Math.pow(Math.sin(Math.tan((Math.pow((1.0/4)/x, x)))), Math.log(Math.abs(Math.asin(Math.exp(-1*Math.abs(x))))));
         }
     }
-    public static double[][] Array3(int rows , int cols , long[] l , double[]x)
+    public static double[][] Arrays(int rows , int cols , long[] n , double[]x)
     {
-        double [][] Array3 = new double[rows][cols];
+        double [][] s = new double[rows][cols];
         for(int i=0 ; i<rows ;i++)
         {
             for(int j=0 ; j<cols ; j++)
             {
-                Array3[i][j] = TheHardThings(l[i], x[j]);
+                s[i][j] = TheHardThings(n[i], x[j]);
             }
         }
-        return Array3;
+        return s;
     }
-    public static void PrintArray(long [] Array)
+    public static void PrintArray(long [] n)
     {
-        for(long element : Array)
+        for(long element : n)
         {
             System.out.print(element + "\t");
         }
@@ -60,18 +60,18 @@ public class Lab1{
         System.out.println();
 
     }
-    public static void PrintArray(double [] Array)
+    public static void PrintArray(double [] x)
     {
-        for(double element : Array)
+        for(double element : x)
         {
             System.out.printf("%.3f\t" , element);
         }
         System.out.println();
         System.out.println();
     }
-    public static void PrintArray(double [][] Array)
+    public static void PrintArray(double [][] s)
     {
-        for(double[] rows : Array)
+        for(double[] rows : s)
         {
             for(double row : rows)
             {
@@ -83,14 +83,14 @@ public class Lab1{
     }
     public static void main(String args[])
     {
-        long[] Array1 = Array1(2,22);
-        double [] Array2 = Array2(14,-6.0,2.0);
-        double [][] Array3 = Array3(11,14,Array1 , Array2);
+        long[] n = Arrayn(2,22);
+        double [] x = Arrayx(14,-6.0,2.0);
+        double [][] s = Arrays(11,14,n , x);
 
         
-        PrintArray(Array1);
-        PrintArray(Array2);
-        PrintArray(Array3);
+        PrintArray(n);
+        PrintArray(x);
+        PrintArray(s);
 
     }
 }
