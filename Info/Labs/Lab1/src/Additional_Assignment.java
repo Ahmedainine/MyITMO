@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class lab1{
+public class Additional_Assignment{
 
      private static final Scanner in = new Scanner(System.in);
 
@@ -28,8 +28,9 @@ public class lab1{
     }
     public static int[] Fibonacci(int max)
     {
+
         int previous = 1 , current = 2;
-        int counter=2;
+        int counter=2; 
         while(previous + current <= max)
         {
             int temp = previous + current;
