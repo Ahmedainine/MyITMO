@@ -1,6 +1,5 @@
 import java.util.Random;
 
-
 public class Lab1{
 
 
@@ -26,7 +25,7 @@ public class Lab1{
     }
     public static double TheHardThings(long l , double x)
     {
-        if(l==6)
+         if(l==6)
         {
             return Math.sin(Math.atan(Math.pow((x-2)/8, 2)));
         }
@@ -75,7 +74,7 @@ public class Lab1{
         {
             for(double row : rows)
             {
-                System.out.printf("%9.3f" , row);
+                 System.out.printf("%9.3f" , row);
             }
             System.out.println();
         }
@@ -83,14 +82,15 @@ public class Lab1{
     }
     public static void main(String args[])
     {
+
         long[] n = Arrayn(2,22);
         double [] x = Arrayx(14,-6.0,2.0);
         double [][] s = Arrays(11,14,n , x);
-
         
+
         PrintArray(n);
         PrintArray(x);
         PrintArray(s);
-
+        
     }
 }
